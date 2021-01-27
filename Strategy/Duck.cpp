@@ -10,7 +10,7 @@ public:
 class FlyWithWings : public FlyBehavior
 {
 public:
-	void fly()
+	virtual void fly()
 	{
 		printf("I'm Flying!!\n");
 	}
@@ -19,7 +19,7 @@ public:
 class FlyNoWay : public FlyBehavior
 {
 public:
-	void fly()
+	virtual void fly()
 	{
 		printf("I can't fly\n");
 	}
@@ -35,7 +35,7 @@ public:
 class Quack : public QuackBehavior
 {
 public:
-	void quack()
+	virtual void quack()
 	{
 		printf("Quack!!\n");
 	}
@@ -44,7 +44,7 @@ public:
 class MuteQuack : public QuackBehavior
 {
 public:
-	void quack()
+	virtual void quack()
 	{
 		printf("<< silence >>\n");
 	}
@@ -53,7 +53,7 @@ public:
 class SQuack : public QuackBehavior
 {
 public:
-	void quack()
+	virtual void quack()
 	{
 		printf("Squack\n");
 	}
@@ -63,8 +63,8 @@ public:
 class Duck
 {
 protected:
-	FlyBehavior* flyBehavior;		// object composition
-	QuackBehavior* quackBehavior;	// object composition
+	FlyBehavior* flyBehavior;
+	QuackBehavior* quackBehavior;
 
 public:
 	Duck() {};
@@ -109,7 +109,7 @@ public:
 
 	~MallardDuck() {};
 
-	void display()
+	virtual void display()
 	{
 		printf("I'm a real Mallard Duck!\n");
 	}
