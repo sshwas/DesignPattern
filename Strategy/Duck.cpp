@@ -63,8 +63,8 @@ public:
 class Duck
 {
 protected:
-	FlyBehavior* flyBehavior;
-	QuackBehavior* quackBehavior;
+	FlyBehavior* flyBehavior;		// object composition
+	QuackBehavior* quackBehavior;	// object composition
 
 public:
 	Duck() {};
